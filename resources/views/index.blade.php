@@ -58,7 +58,7 @@
                     if (name) {
                         // إرسال طلب AJAX إلى الرابط
                         $.ajax({
-                            url: 'http://127.0.0.1:8000/get-data',  // رابط API لارافيل
+                            url: '{{route('get_data')}}',  // رابط API لارافيل
                             type: 'GET',
                             data: { query: name },
                             success: function(response) {
