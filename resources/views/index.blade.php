@@ -9,17 +9,12 @@
             <header class="text-center py-4">
                 <div class="container">
                     <img src="{{asset('assets/images/logo.jpg')}}" alt="الشعار" class="rounded-circle mb-2 logo">
-                    <h1 class="h-title-a">خدمة البحث عن المفرَج عنهم: دعم التواصل والشفافية</h1>
+                    <h1 class="h-title-a">خدمة البحث عن المفرَج عنهم:<br> دعم التواصل والشفافية</h1>
                 </div>
             </header>
 
             <div class="container mt-5">
-                <div class="text-center mb-4">
-                    <p class="text-page">تعد قاعدة البيانات هذه خدمة مخصصة للبحث عن المسجونين الذين تم إخلاء سبيلهم. تهدف إلى توفير
-                        المعلومات بشكل دقيق وشفاف لجميع الأفراد، مع الالتزام التام بالخصوصية واحترام القيم الإنسانية
-                        والاجتماعية. يتم استخدام هذه الخدمة لتسهيل التواصل مع الأفراد المعنيين وتمكين ذويهم أو الجهات
-                        المختصة من متابعة حالتهم بطريقة آمنة وسهلة.</p>
-                </div>
+
                 <form id="searchForm" class="mb-5">
                     <div class="row justify-content-center">
                         <div class="col-md-6">
@@ -37,6 +32,16 @@
                     <div id="resultList"></div>
                 </div>
                 <p id="noResultsMessage" class="no-results" style="display:none;">لا توجد نتائج لهذا الاسم.</p>
+                <div class="row justify-content-center">
+                    <h5>اخر تحديث لقاعدة البيانات: {{$lastUpdated->created_at->format('d/m/Y H:i:s')}}</h5>
+                <h6>عدد السجلات: {{$dataCount}}</h6>
+                </div>
+                <div class="text-center mb-4">
+                    <p class="text-page">تعد قاعدة البيانات هذه خدمة مخصصة للبحث عن المسجونين الذين تم إخلاء سبيلهم. تهدف إلى توفير
+                        المعلومات بشكل دقيق وشفاف لجميع الأفراد، مع الالتزام التام بالخصوصية واحترام القيم الإنسانية
+                        والاجتماعية. يتم استخدام هذه الخدمة لتسهيل التواصل مع الأفراد المعنيين وتمكين ذويهم أو الجهات
+                        المختصة من متابعة حالتهم بطريقة آمنة وسهلة.</p>
+                </div>
 
             </div>
 

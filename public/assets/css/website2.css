@@ -82,10 +82,11 @@ footer {
 .text-page{
     width: 80%;
     margin: auto;
-    font-size: 18px;
+    font-size: 15px;
+    color: #898888;
 }
 .h-title-a{
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .result {
