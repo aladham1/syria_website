@@ -1,0 +1,486 @@
+@font-face {
+    font-family: 'FFShamelFamilyBold';
+    src: url("../fonts/FFShamelFamily-SansOneBold.ttf");
+}
+
+@font-face {
+    font-family: 'Nunito-Regular';
+    src: url("../fonts/Nunito-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'AvenirBook';
+    src: url("../fonts/AvenirBook.ttf");
+}
+
+.font-family-ffshamel {
+    font-family: 'FFShamelFamilyBold' !important;
+}
+
+input, a {
+    box-shadow: none !important;
+}
+
+.home-bg {
+    background-size: cover;
+}
+
+h1, h2, h3, h4, h5, h6 button, p, button, .swal2-container {
+    font-family: 'FFShamelFamilyBold' !important;
+}
+
+.swal2-container {
+    direction: rtl;
+}
+
+.min-vh-100 {
+    min-height: 90vh !important;
+}
+
+.min-vh-70 {
+    min-height: 70vh !important;
+}
+
+.min-vh-75 {
+    min-height: 75vh !important;
+}
+
+.min-vh-90 {
+    min-height: 90vh !important;
+}
+
+.home-bg h1 {
+    color: #253F22;
+    font-size: 32px;
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+
+.home-bg h4 {
+    color: #68BF4E;
+    font-size: 20px;
+    font-family: 'Nunito-Regular' !important;
+}
+
+.custom-flag {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: url('../media/flags/kuwait.svg') no-repeat;
+    background-size: contain;
+    margin-right: 5px;
+    border: 0;
+}
+
+.home-bg form {
+    margin-top: 20px;
+}
+
+.home-bg form.form input {
+    border: 0;
+    background-color: #EAECEF !important;
+    border-radius: 0 20px 20px 0 !important;
+    direction: ltr;
+
+}
+.home-bg form#storeVisit input{
+    direction: initial;
+}
+.home-bg form .input-group-text {
+    border: 0;
+    background-color: #EAECEF;
+    border-radius: 20px 0 0 20px;
+    height: 43px;
+    padding-left: 22px;
+}
+
+form .btn-login, #startButton {
+    line-height: 37px;
+    background-color: #69BF4B;
+    display: block;
+    color: #FFF;
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid #69BF4B;
+    height: 43px;
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+form .btn-login:hover, #startButton:hover {
+    background-color: #fff;
+    border-color: #69BF4B;
+    color: #69BF4B;
+}
+
+form.otp .otp-input {
+    width: 40px;
+    height: 40px;
+    border: none;
+    margin: 0 6px;
+    text-align: center;
+    font-size: 27px;
+    cursor: not-allowed;
+    border-radius: 50%;
+    background-color: #EAECEF;
+    border: 0;
+}
+
+form.otp {
+    direction: ltr;
+}
+
+form.otp .otp-input:focus {
+    outline: none;
+}
+
+form.otp .otp-input-filled {
+    background-color: #BCD389; /* Change background color when filled */
+}
+
+form.otp label {
+    font-family: 'Nunito-Regular';
+    text-align: center;
+    font-size: 14px;
+    font-weight: normal;
+    display: block;
+    margin-bottom: 3px;
+}
+
+#otp-container {
+    margin-top: 20px;
+}
+
+.user-data {
+    text-align: center;
+}
+
+.user-data img {
+    margin-bottom: 12px;
+    border-radius: 50%;
+    border: 4px solid #FFF;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adjust the shadow as needed */
+}
+
+.user-data .phone {
+    font-family: 'AvenirBook';
+    color: #253F22;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    direction: ltr;
+}
+
+.user-qrcode h5 {
+    margin: 10px 0;
+    color: #BCD389;
+    font-size: 17px;
+}
+
+.user-qrcode img {
+    width: 60%;
+    display: block;
+    margin: auto;
+}
+
+.user-qrcode .wallet {
+    color: #69BF4B;
+    border: 2px solid #69BF4B;
+    font-size: 21px;
+    width: 80%;
+    margin: 10px auto;
+    border-radius: 7px;
+    height: 55px;
+    line-height: 60px;
+}
+
+.user-qrcode .wallet span {
+    color: #000000;
+}
+
+.scroll-container {
+    width: 100%; /* Adjust the width as needed */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent line breaks for list items */
+}
+
+.horizontal-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex; /* Display list items horizontally */
+}
+
+.horizontal-list li {
+    min-width: 100px; /* Adjust the width of each list item */
+    padding: 10px;
+    margin-right: 10px; /* Adjust the spacing between items */
+    background-color: #EAECEF;
+    font-family: 'FFShamelFamilyBold';
+    border-radius: 20px;
+    color: #69BF4B;
+}
+
+/* Optional: Style for small screens (e.g., mobile devices) */
+@media (max-width: 767px) {
+    .scroll-container {
+        width: 100%;
+    }
+
+    .horizontal-list li {
+        min-width: 80px; /* Adjust for smaller screens */
+        padding: 8px;
+    }
+}
+
+.form-plans {
+    width: 100%;
+}
+
+
+.custom-radio input {
+    display: none;
+}
+
+.radio-btn {
+    margin: 10px;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    padding: 15px 23px 6px;
+    background-color: #EAECEF;
+    font-family: 'FFShamelFamilyBold';
+    border-radius: 20px;
+}
+
+.radio-btn .hobbies-icon h3 {
+    color: #69BF4B;
+    font-size: 18px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.custom-radio input:checked + .radio-btn {
+    background-color: #69BF4B;
+    color: #FFF;
+}
+
+.custom-radio input:checked + .radio-btn h3 {
+    color: #FFF;
+}
+
+form .btn-pay {
+    width: 80%;
+    margin: 20px auto;
+    height: 50px;
+    line-height: 45px;
+}
+
+.home-bg form.facility-login-form input {
+    text-align: right !important;
+    direction: rtl !important;
+    padding-right: 20px;
+}
+
+.home-bg form.facility-login-form input {
+    border-radius: 20px !important;
+}
+
+#startButton {
+    width: 80%;
+}
+
+.input-quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Style for the buttons */
+.change-button-quantity {
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+}
+
+.change-button-quantity div {
+    background-color: #FFF;
+    border-radius: 50%;
+}
+
+/* Style for the input */
+#quantity {
+    width: 40px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.icon-list {
+    width: 50px;
+    height: 50px;
+    background-color: #F4F3FA;
+    line-height: 47px;
+    border-radius: 50%;
+    margin-left: auto;
+    cursor: pointer;
+    position: relative;
+}
+
+.icon-list img {
+
+}
+
+.icon-list .list {
+    display: none;
+    background-color: #69bf4b;
+    position: absolute;
+    width: 167px;
+    right: 12px;
+    top: 63px;
+    padding: 7px 20px;
+    text-align: right !important;
+    border-radius: 7px;
+}
+
+.icon-list .list li {
+    display: block !important;
+}
+
+.icon-list .list.visible {
+    display: block;
+}
+
+.icon-list .list li a {
+    font-family: 'FFShamelFamilyBold';
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#result {
+    margin-top: 15px;
+}
+
+#result h5 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#result form .input-group {
+    display: inline-block;
+    text-align: center;
+}
+
+.visitor-data {
+    text-align: center;
+    border: 2px solid #68BF4E;
+    padding: 18px;
+    border-radius: 8px;
+    margin-bottom: 35px;
+}
+
+.visitor-data p {
+    margin-bottom: 0;
+}
+
+.visitor-data p span {
+    color: #68BF4E;
+}
+
+.home-bg #result form {
+    position: fixed;
+    bottom: 0;
+    margin: auto;
+    display: block;
+    background: #eaeaea;
+    right: 0;
+    left: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 40px;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(100%);
+}
+
+.home-bg #result form label {
+    font-family: 'FFShamelFamilyBold';
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.home-bg #result form .btn-login {
+    margin-top: 15px;
+}
+
+.align-middle {
+    vertical-align: middle !important;
+}
+
+
+.w-50px {
+    width: 50px !important;
+}
+
+.table.gy-4 td, .table.gy-4 th {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+#visits h5 {
+    margin-bottom: 30px;
+    font-size: 22px;
+}
+
+#visits {
+    padding: 20px 10px;
+}
+
+#visits .facility-info {
+    font-family: 'FFShamelFamilyBold';
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+#visits .facility-info .tickets {
+    font-size: 12px;
+    display: block;
+    font-weight: 400;
+}
+
+#visits .user-image {
+    max-width: 50px;
+    margin-left: 17px;
+    border: 1px solid #69BF4B;
+    padding: 8px;
+}
+
+/* Customize as needed */
+#visits .price {
+    font-weight: bold;
+    display: block;
+    color: #69BF4B;
+}
+
+#visits .date {
+    display: block;
+    font-size: 11px;
+    font-family: 'AvenirBook';
+}
+
+/* Hide the up and down arrows */
+form.otp input[type="number"]::-webkit-outer-spin-button,
+form.otp input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+form.otp input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+}

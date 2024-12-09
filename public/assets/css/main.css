@@ -1,0 +1,105 @@
+@font-face {
+    font-family: 'AvenirArabicLight';
+    src: url("../../assets/fonts/aviner/AvenirArabic-Light.otf");
+}
+
+@font-face {
+    font-family: 'AvenirArabicMedium';
+    src: url("../../assets/fonts/aviner/AvenirArabic-Medium.otf");
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+body, a, input, h1, h2, h3, h4, h5, h6, p, button, span, li, label, .dz-message .subtitle,.apexcharts-text tspan {
+    font-family: 'AvenirArabicMedium' !important;
+}
+
+.dropzone .dz-message {
+    text-align: center;
+    display: block;
+}
+
+.errors {
+    color: #f1416c;
+}
+
+.page-content.velmld-parent > .velmld-overlay {
+    top: -60px;
+    z-index: 99999999;
+}
+
+.velmld-overlay {
+    position: absolute;
+    z-index: 3000;
+    margin: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity .3s;
+}
+
+.page-content-wrapper .velmld-overlay {
+    background: hsla(0, 0%, 100%, .7) !important;
+}
+
+.velmld-spinner {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    text-align: center;
+}
+
+[type=email], [type=number] {
+    direction: rtl;
+}
+
+.select2-container--bootstrap5 .select2-selection--multiple .select2-selection__rendered .select2-selection__choice .select2-selection__choice__remove {
+    left: 2px;
+}
+
+.select2-container--bootstrap5 .select2-selection__clear {
+    right: 14px;
+}
+
+.select2-container--bootstrap5 .select2-selection--single .select2-selection__rendered {
+    color: #000;
+}
+
+.final-total {
+    background-color: transparent;
+    border: 0;
+    color: #0B75BA;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.form-select.form-select-solid.warring {
+    color: #ffc700;
+    background-color: #fff8dd;
+}
+
+.form-select.form-select-solid.success {
+    color: #50cd89;
+    background-color: #e8fff3;
+}
+
+.form-select.form-select-solid.danger {
+    background-color: #fff5f8;
+    color: #f1416c;
+}
+
+select.form-select-solid option {
+    background: #FFF !important;
+    color: #000;
+}
+h3.home-d{
+    text-align: left;
+    padding-top: 7px;
+    font-size: 50px;
+}

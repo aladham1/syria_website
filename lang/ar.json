@@ -1,0 +1,17 @@
+{
+    "Email" : "البريد الالكتروني",
+    "Login" : "دخول",
+    "Name" : "الاسم",
+    "Password" : "كلمة المرور",
+    "Phone" : "رقم الجوال",
+    "Visitors" : "الزوار",
+    "Login code" : "رمز الدخول",
+    "Managers" : "الإداريين",
+    "Users" : "المستخدمين",
+    "Title" : "العنوان",
+    "Amount" : "المبلغ",
+    "Free amount" : "المبلغ الاضافي",
+    "All managers" : "كل الإداريين",
+    "Remember me" : "تذكرني",
+    "Forget password" : "نسيت كلمة المرور"
+}

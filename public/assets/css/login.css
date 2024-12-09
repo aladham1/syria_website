@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'AvenirArabicLight';
+    src: url("../../assets/fonts/aviner/AvenirArabic-Light.otf");
+}
+
+@font-face {
+    font-family: 'AvenirArabicMedium';
+    src: url("../../assets/fonts/aviner/AvenirArabic-Medium.otf");
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+body, a, input, h1, h2, h3, h4, h5, h6, p, button, span, li, label {
+    font-family: 'AvenirArabicMedium';
+}
+.errors{
+    color: #f1416c;
+}
+.text-green-600{
+    color: #50cd89;
+}
