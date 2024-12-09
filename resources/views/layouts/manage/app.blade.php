@@ -187,7 +187,7 @@
                     <div class="text-dark order-2 order-md-1">
                         <span class="text-muted fw-bold me-1">{{date('Y')}}©</span>
                         <a href="#" target="_blank" class="text-gray-800 text-hover-primary">
-                            جميع الحقوق محفوظة ل البحيرة
+                            جميع الحقوق محفوظة ل Syria website
                         </a>
                     </div>
                     <!--end::Copyright-->

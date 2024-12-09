@@ -18,8 +18,8 @@
 <footer class="text-white text-center py-3 mt-5">
     <div class="container">
         <p>اشترك معنا:</p>
-        <a href="https://t.me/yourchannel" target="_blank" class="btn btn-outline-light me-2">قناتنا على التلغرام</a>
-        <a href="https://wa.me/yournumber" target="_blank" class="btn btn-outline-light">التواصل عبر الواتساب</a>
+        <a href="{{config('settings.telgrame')}}" target="_blank" class="btn btn-outline-light me-2">قناتنا على التلغرام</a>
+        <a href="{{config('settings.whatsapp')}}" target="_blank" class="btn btn-outline-light">التواصل عبر الواتساب</a>
     </div>
 </footer>
 

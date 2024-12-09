@@ -17,14 +17,11 @@ class SettingSeeder extends Seeder
         Setting::truncate();
         $settings = [
             [
-                'key' => 'seo_title',
-                'value' => 'البحيرة'
-            ], [
-                'key' => 'price_for_user',
-                'value' => 2
+                'key' => 'telgrame',
+                'value' => 'https://t.me/syriawebsite'
             ], [
                 'key' => 'whatsapp',
-                'value' => '+96560650544'
+                'value' => 'https://whatsapp.com/channel/0029VatoEBm9cDDW2725sA3s'
             ]
         ];
         Setting::insert($settings);

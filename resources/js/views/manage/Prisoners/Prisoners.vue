@@ -66,6 +66,8 @@
                         </tr>
                         </tbody>
                     </table>
+                    <pagination :data="prisoners" @pagination-change-page="getResults"></pagination>
+
                 </div>
             </div>
         </div>

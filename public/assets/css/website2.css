@@ -114,3 +114,8 @@ footer {
     color: red;
     font-weight: bold;
 }
+.data-style{
+    margin: 0 auto 20px;
+    text-align: center;
+    font-size: 18px;
+}

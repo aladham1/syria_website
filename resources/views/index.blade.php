@@ -9,7 +9,7 @@
             <header class="text-center py-4">
                 <div class="container">
                     <a href="{{route('index')}}">
-                    <img src="{{asset('assets/images/logo.jpg')}}" alt="الشعار" class="rounded-circle mb-2 logo">
+                        <img src="{{asset('assets/images/logo.jpg')}}" alt="الشعار" class="rounded-circle mb-2 logo">
                     </a>
                     <h1 class="h-title-a">خدمة البحث عن المفرَج عنهم:<br> دعم التواصل والشفافية</h1>
                 </div>
@@ -20,7 +20,8 @@
                 <form id="searchForm" class="mb-5">
                     <div class="row justify-content-center">
                         <div class="col-md-6">
-                            <input type="text" id="name" name="name"  class="form-control form-control-lg" placeholder="اكتب الاسم هنا"
+                            <input type="text" id="name" name="name" class="form-control form-control-lg"
+                                   placeholder="اكتب الاسم هنا"
                                    required>
                         </div>
                         <div class="col-md-2">
@@ -35,11 +36,12 @@
                 </div>
                 <p id="noResultsMessage" class="no-results" style="display:none;">لا توجد نتائج لهذا الاسم.</p>
                 <div class="row justify-content-center">
-                    <h5>اخر تحديث لقاعدة البيانات: {{$lastUpdated->created_at->format('d/m/Y H:i:s')}}</h5>
-                <h6>عدد السجلات: {{$dataCount}}</h6>
+                    <h5 class="data-style">اخر تحديث لقاعدة البيانات: {{$lastUpdated->created_at->format('d/m/Y H:i:s')}}</h5>
+                    <h6 class="data-style">عدد السجلات: {{$dataCount}}</h6>
                 </div>
                 <div class="text-center mb-4">
-                    <p class="text-page">تعد قاعدة البيانات هذه خدمة مخصصة للبحث عن المسجونين الذين تم إخلاء سبيلهم. تهدف إلى توفير
+                    <p class="text-page">تعد قاعدة البيانات هذه خدمة مخصصة للبحث عن المسجونين الذين تم إخلاء سبيلهم.
+                        تهدف إلى توفير
                         المعلومات بشكل دقيق وشفاف لجميع الأفراد، مع الالتزام التام بالخصوصية واحترام القيم الإنسانية
                         والاجتماعية. يتم استخدام هذه الخدمة لتسهيل التواصل مع الأفراد المعنيين وتمكين ذويهم أو الجهات
                         المختصة من متابعة حالتهم بطريقة آمنة وسهلة.</p>
@@ -55,9 +57,9 @@
 
     <x-slot name="js">
         <script>
-                $(document).ready(function() {
+            $(document).ready(function () {
                 // عند إرسال النموذج
-                $("#searchForm").submit(function(e) {
+                $("#searchForm").submit(function (e) {
                     e.preventDefault(); // منع إعادة تحميل الصفحة
 
                     var name = $("#name").val(); // الحصول على الاسم من النموذج
@@ -67,8 +69,8 @@
                         $.ajax({
                             url: '{{route('get_data')}}',  // رابط API لارافيل
                             type: 'GET',
-                            data: { query: name },
-                            success: function(response) {
+                            data: {query: name},
+                            success: function (response) {
                                 // التأكد من أن البيانات موجودة
                                 if (response.message === 'success' && response.prisoners.length > 0) {
                                     var resultList = $('#resultList');
@@ -76,7 +78,7 @@
                                     $('#noResultsMessage').hide(); // إخفاء رسالة عدم وجود نتائج
 
                                     // عرض البيانات
-                                    response.prisoners.forEach(function(item) {
+                                    response.prisoners.forEach(function (item) {
                                         var prisonerCard = $('<div class="prisoner-card"></div>');
                                         prisonerCard.append('<div class="prisoner-name">' + item.name + '</div>');
                                         prisonerCard.append('<div class="prisoner-details">السجن: ' + (item.prison || 'غير محدد') + '</div>');
@@ -90,7 +92,7 @@
                                     $('#noResultsMessage').show();
                                 }
                             },
-                            error: function() {
+                            error: function () {
                                 alert('حدث خطأ أثناء استلام البيانات.');
                             }
                         });

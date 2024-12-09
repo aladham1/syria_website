@@ -17,20 +17,10 @@
                    <div class="col-md-6">
                        <div class="d-flex flex-column me-n7 pe-7">
                            <div class="form-floating mb-7">
-                               <input type="number" value="{{config('settings.price_for_user')}}" name="price_for_user" class="form-control"
-                                      id="price_for_user"
+                               <input type="text" value="{{config('settings.telgrame')}}" name="telgrame" class="form-control"
+                                      id="telgrame"
                                       placeholder="رابط التلغرام"/>
-                               <label for="price_for_user">رابط التلغرام</label>
-                           </div>
-                       </div>
-                   </div>
-                   <div class="col-md-6">
-                       <div class="d-flex flex-column me-n7 pe-7">
-                           <div class="form-floating mb-7">
-                               <input type="text" value="{{config('settings.seo_title')}}" name="seo_title" class="form-control"
-                                      id="seo_title"
-                                    placeholder="اسم الموقع">
-                               <label for="seo_title">أسم الموقع</label>
+                               <label for="telgrame">رابط التلغرام</label>
                            </div>
                        </div>
                    </div>
