@@ -8,7 +8,9 @@
         <div class="d-flex flex-column ">
             <header class="text-center py-4">
                 <div class="container">
+                    <a href="{{route('index')}}">
                     <img src="{{asset('assets/images/logo.jpg')}}" alt="الشعار" class="rounded-circle mb-2 logo">
+                    </a>
                     <h1 class="h-title-a">خدمة البحث عن المفرَج عنهم:<br> دعم التواصل والشفافية</h1>
                 </div>
             </header>
