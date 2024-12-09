@@ -19,8 +19,8 @@
                            <div class="form-floating mb-7">
                                <input type="number" value="{{config('settings.price_for_user')}}" name="price_for_user" class="form-control"
                                       id="price_for_user"
-                                      placeholder="سعر التكلفة لكل زائر"/>
-                               <label for="price_for_user">سعر التكلفة لكل زائر</label>
+                                      placeholder="رابط التلغرام"/>
+                               <label for="price_for_user">رابط التلغرام</label>
                            </div>
                        </div>
                    </div>

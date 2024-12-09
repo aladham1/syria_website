@@ -15,7 +15,13 @@
         {{$slot}}
     </section>
 </main>
-
+<footer class="text-white text-center py-3 mt-5">
+    <div class="container">
+        <p>اشترك معنا:</p>
+        <a href="https://t.me/yourchannel" target="_blank" class="btn btn-outline-light me-2">قناتنا على التلغرام</a>
+        <a href="https://wa.me/yournumber" target="_blank" class="btn btn-outline-light">التواصل عبر الواتساب</a>
+    </div>
+</footer>
 
 <!-- Include Bootstrap JS and jQuery -->
 <script src="{{asset('/')}}assets/js/jquery-3.7.1.min.js"></script>
@@ -26,6 +32,7 @@
         $(this).find(".list").toggleClass("visible");
     });
 </script>
+{{--xR$*p6#UW!T.--}}
 {{$js}}
 </body>
 </html>

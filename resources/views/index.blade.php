@@ -5,29 +5,40 @@
 
     <div class="home-bg" style="background-image: url('{{asset('/')}}assets/images/home-bg.png');">
         <!-- Centered Content -->
-        <div class="d-flex flex-column align-items-center justify-content-center min-vh-100">
-            <!-- Logo -->
-            <img src="{{asset('/')}}assets/images/logo.jpg" alt="Logo" class="mb-3" style="max-width: 200px;">
-            <h1 class="text-center">حجز تذكرة المزرعة</h1>
-            <h4 class="text-center">Book albohayra farm tickets</h4>
-            <form class="form" id="loginForm">
-                @csrf
-                <div class="input-group mb-3">
-
-                    <input type="tel" class="form-control" name="phone" maxlength="8" placeholder="Phone Number">
-                    <div class="input-group-prepend">
-                            <span class="input-group-text">
-                                +965<i class="custom-flag"></i>
-                            </span>
-                    </div>
+        <div class="d-flex flex-column ">
+            <header class="text-center py-4">
+                <div class="container">
+                    <img src="{{asset('assets/images/logo.jpg')}}" alt="الشعار" class="rounded-circle mb-2 logo">
+                    <h1 class="h-title-a">خدمة البحث عن المفرَج عنهم: دعم التواصل والشفافية</h1>
                 </div>
-                <button class="btn btn-login" type="submit">تسجيل</button>
-            </form>
-            <div class="wusool-logo mt-4">
-                <a href="https://wa.me/{{str_replace(' ','',config('settings.whatsapp'))}}">
-                    <img src="{{asset('assets/images/wusool.png')}}" alt="Wusool">
-                </a>
+            </header>
+
+            <div class="container mt-5">
+                <div class="text-center mb-4">
+                    <p class="text-page">تعد قاعدة البيانات هذه خدمة مخصصة للبحث عن المسجونين الذين تم إخلاء سبيلهم. تهدف إلى توفير
+                        المعلومات بشكل دقيق وشفاف لجميع الأفراد، مع الالتزام التام بالخصوصية واحترام القيم الإنسانية
+                        والاجتماعية. يتم استخدام هذه الخدمة لتسهيل التواصل مع الأفراد المعنيين وتمكين ذويهم أو الجهات
+                        المختصة من متابعة حالتهم بطريقة آمنة وسهلة.</p>
+                </div>
+                <form id="searchForm" class="mb-5">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control form-control-lg" placeholder="اكتب الاسم هنا"
+                                   required>
+                        </div>
+                        <div class="col-md-2">
+                            <button type="submit" class="btn btn-primary btn-lg w-100">بحث</button>
+                        </div>
+                    </div>
+                </form>
+
+                <div id="resultsSection" class="d-none">
+                    <h3 class="text-center text-primary mb-3" style="color: #d2232a;">النتائج:</h3>
+                    <ul id="resultsList" class="list-group"></ul>
+                </div>
             </div>
+
+
         </div>
 
 
@@ -36,26 +47,26 @@
     <x-slot name="js">
         <script>
             $(document).ready(function () {
-                $('#loginForm').submit(function (e) {
-                    e.preventDefault();
-                    $.ajax({
-                        type: 'POST',
-                        url: "{{ route('login.by.phone') }}",
-                        data: $(this).serialize(),
-                        success: function (response) {
-                            window.location = "{{route('otp_code')}}"
-                        },
-                        error: function (error) {
-                            Swal.fire({
-                                title: 'خطأ!',
-                                text: "يرجى التأكد من رقم الجوال!",
-                                icon: 'error',
-                                confirmButtonText: 'حسناً',
-                            })
-                        }
-                    });
+                {{--$('#loginForm').submit(function (e) {--}}
+                {{--    e.preventDefault();--}}
+                {{--    $.ajax({--}}
+                {{--        type: 'POST',--}}
+                {{--        url: "{{ route('login.by.phone') }}",--}}
+                {{--        data: $(this).serialize(),--}}
+                {{--        success: function (response) {--}}
+                {{--            window.location = "{{route('otp_code')}}"--}}
+                {{--        },--}}
+                {{--        error: function (error) {--}}
+                {{--            Swal.fire({--}}
+                {{--                title: 'خطأ!',--}}
+                {{--                text: "يرجى التأكد من رقم الجوال!",--}}
+                {{--                icon: 'error',--}}
+                {{--                confirmButtonText: 'حسناً',--}}
+                {{--            })--}}
+                {{--        }--}}
+                {{--    });--}}
 
-                });
+                {{--});--}}
             });
         </script>
     </x-slot>
