@@ -23,7 +23,7 @@
                 <form id="searchForm" class="mb-5">
                     <div class="row justify-content-center">
                         <div class="col-md-6">
-                            <input type="text" class="form-control form-control-lg" placeholder="اكتب الاسم هنا"
+                            <input type="text" id="name" name="name"  class="form-control form-control-lg" placeholder="اكتب الاسم هنا"
                                    required>
                         </div>
                         <div class="col-md-2">
@@ -32,10 +32,12 @@
                     </div>
                 </form>
 
-                <div id="resultsSection" class="d-none">
-                    <h3 class="text-center text-primary mb-3" style="color: #d2232a;">النتائج:</h3>
-                    <ul id="resultsList" class="list-group"></ul>
+                <div id="result" class="result">
+                    <h4>النتائج:</h4>
+                    <div id="resultList"></div>
                 </div>
+                <p id="noResultsMessage" class="no-results" style="display:none;">لا توجد نتائج لهذا الاسم.</p>
+
             </div>
 
 
@@ -46,27 +48,49 @@
 
     <x-slot name="js">
         <script>
-            $(document).ready(function () {
-                {{--$('#loginForm').submit(function (e) {--}}
-                {{--    e.preventDefault();--}}
-                {{--    $.ajax({--}}
-                {{--        type: 'POST',--}}
-                {{--        url: "{{ route('login.by.phone') }}",--}}
-                {{--        data: $(this).serialize(),--}}
-                {{--        success: function (response) {--}}
-                {{--            window.location = "{{route('otp_code')}}"--}}
-                {{--        },--}}
-                {{--        error: function (error) {--}}
-                {{--            Swal.fire({--}}
-                {{--                title: 'خطأ!',--}}
-                {{--                text: "يرجى التأكد من رقم الجوال!",--}}
-                {{--                icon: 'error',--}}
-                {{--                confirmButtonText: 'حسناً',--}}
-                {{--            })--}}
-                {{--        }--}}
-                {{--    });--}}
+                $(document).ready(function() {
+                // عند إرسال النموذج
+                $("#searchForm").submit(function(e) {
+                    e.preventDefault(); // منع إعادة تحميل الصفحة
 
-                {{--});--}}
+                    var name = $("#name").val(); // الحصول على الاسم من النموذج
+
+                    if (name) {
+                        // إرسال طلب AJAX إلى الرابط
+                        $.ajax({
+                            url: 'http://127.0.0.1:8000/get-data',  // رابط API لارافيل
+                            type: 'GET',
+                            data: { query: name },
+                            success: function(response) {
+                                // التأكد من أن البيانات موجودة
+                                if (response.message === 'success' && response.prisoners.length > 0) {
+                                    var resultList = $('#resultList');
+                                    resultList.empty(); // مسح النتائج السابقة
+                                    $('#noResultsMessage').hide(); // إخفاء رسالة عدم وجود نتائج
+
+                                    // عرض البيانات
+                                    response.prisoners.forEach(function(item) {
+                                        var prisonerCard = $('<div class="prisoner-card"></div>');
+                                        prisonerCard.append('<div class="prisoner-name">' + item.name + '</div>');
+                                        prisonerCard.append('<div class="prisoner-details">السجن: ' + (item.prison || 'غير محدد') + '</div>');
+                                        resultList.append(prisonerCard);
+                                    });
+
+                                    // إظهار النتائج
+                                    $('#result').show();
+                                } else {
+                                    $('#result').hide();
+                                    $('#noResultsMessage').show();
+                                }
+                            },
+                            error: function() {
+                                alert('حدث خطأ أثناء استلام البيانات.');
+                            }
+                        });
+                    } else {
+                        alert('يرجى إدخال اسم للبحث');
+                    }
+                });
             });
         </script>
     </x-slot>

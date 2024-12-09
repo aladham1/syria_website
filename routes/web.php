@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\UserController;
+use App\Http\Controllers\GetDataAction;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PrisonerController;
 use App\Http\Controllers\RoleController;
@@ -49,6 +50,7 @@ Route::middleware(['auth'])->group(function () {
     });
 
 });
+Route::get('get-data', GetDataAction::class)->name('get_data');
 
 
 require __DIR__ . '/auth.php';

@@ -25,7 +25,8 @@ class Prisoner extends Model
     public function scopeFilter($query): mixed
     {
         return $query->when(\request()->get('query') != 'null' && !empty(\request()->get('query')), function ($q) {
-            $q->where('name', 'LIKE', '%' . \request()->get('query') . '%');
+            $q->where('name', 'LIKE', '%' . \request()->get('query') . '%')
+            ->orWhere('prison', 'LIKE', '%' . \request()->get('query') . '%');
         });
     }
 }
