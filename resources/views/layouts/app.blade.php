@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{config('settings.seo_title')}}</title>
+    <title>سوريا ويب سايت</title>
     <!-- Include Bootstrap CSS -->
     <link href="{{asset('/')}}assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{asset('/')}}assets/css/website2.css" rel="stylesheet">
