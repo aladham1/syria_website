@@ -14,7 +14,7 @@
             </div>
             <div class="fv-row mb-10">
                 <label class="fs-5 fw-bolder form-label mb-2">
-                    <span class="">السجن</span>
+                    <span class="">ملاحظات</span>
                 </label>
                 <input class="form-control form-control-solid" v-model="form.prison" placeholder="السجن" name="prison" />
                 <span v-if="form.errors.has('prison')"

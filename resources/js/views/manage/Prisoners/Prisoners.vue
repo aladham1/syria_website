@@ -43,7 +43,7 @@
                         <tr class="fw-bold fs-6 text-muted">
                             <th>#</th>
                             <th>الاسم</th>
-                            <th>السجن</th>
+                            <th>ملاحظات</th>
                             <th class="text-center" v-if="can_edit || can_delete">العمليات</th>
                         </tr>
                         </thead>
@@ -133,8 +133,8 @@
                                 <div class="form-floating mb-7">
                                     <input type="text" v-model="editForm.prison" name="prison" class="form-control"
                                            id="title"
-                                           placeholder="السجن"/>
-                                    <label for="title">السجن</label>
+                                           placeholder="ملاحظات"/>
+                                    <label for="title">ملاحظات</label>
                                     <span v-if="editForm.errors.has('prison')"
                                           class="fv-plugins-message-container invalid-feedback"
                                           v-text="editForm.errors.get('prison')"></span>

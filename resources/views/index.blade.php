@@ -77,7 +77,7 @@
                                     response.prisoners.forEach(function (item) {
                                         var prisonerCard = $('<div class="prisoner-card"></div>');
                                         prisonerCard.append('<div class="prisoner-name">' + item.name + '</div>');
-                                        prisonerCard.append('<div class="prisoner-details">السجن: ' + (item.prison || 'غير محدد') + '</div>');
+                                        prisonerCard.append('<div class="prisoner-details">ملاخظات: ' + (item.prison || 'غير محدد') + '</div>');
                                         resultList.append(prisonerCard);
                                     });
 
