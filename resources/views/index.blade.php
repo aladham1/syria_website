@@ -11,7 +11,7 @@
                     <a href="{{route('index')}}">
                         <img src="{{asset('assets/images/logo.jpg')}}" alt="الشعار" class="rounded-circle mb-2 logo">
                     </a>
-                    <h1 class="h-title-a">خدمة البحث عن المفرَج عنهم:<br> دعم التواصل والشفافية</h1>
+                    <h1 class="h-title-a">{!! config('settings.title1') !!}</h1>
                 </div>
             </header>
 
@@ -40,11 +40,7 @@
                     <h6 class="data-style">عدد السجلات: {{$dataCount}}</h6>
                 </div>
                 <div class="text-center mb-4">
-                    <p class="text-page">تعد قاعدة البيانات هذه خدمة مخصصة للبحث عن المسجونين الذين تم إخلاء سبيلهم.
-                        تهدف إلى توفير
-                        المعلومات بشكل دقيق وشفاف لجميع الأفراد، مع الالتزام التام بالخصوصية واحترام القيم الإنسانية
-                        والاجتماعية. يتم استخدام هذه الخدمة لتسهيل التواصل مع الأفراد المعنيين وتمكين ذويهم أو الجهات
-                        المختصة من متابعة حالتهم بطريقة آمنة وسهلة.</p>
+                    <p class="text-page">{{config('settings.title2')}}</p>
                 </div>
 
             </div>

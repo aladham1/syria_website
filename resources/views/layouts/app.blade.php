@@ -20,6 +20,7 @@
         <p>اشترك معنا:</p>
         <a href="{{config('settings.telgrame')}}" target="_blank" class="btn btn-outline-light me-2">قناتنا على التلغرام</a>
         <a href="{{config('settings.whatsapp')}}" target="_blank" class="btn btn-outline-light">التواصل عبر الواتساب</a>
+    <p class="mt-3">{!! config('settings.footer_text') !!}</p>
     </div>
 </footer>
 

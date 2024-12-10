@@ -22,6 +22,12 @@ class SettingSeeder extends Seeder
             ], [
                 'key' => 'whatsapp',
                 'value' => 'https://whatsapp.com/channel/0029VatoEBm9cDDW2725sA3s'
+            ], [
+                'key' => 'title1',
+                'value' => 'title1'
+            ], [
+                'key' => 'title2',
+                'value' => 'title2'
             ]
         ];
         Setting::insert($settings);

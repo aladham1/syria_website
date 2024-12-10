@@ -34,6 +34,36 @@
                            </div>
                        </div>
                    </div>
+                   <div class="col-md-6">
+                       <div class="d-flex flex-column me-n7 pe-7">
+                           <div class="form-floating mb-7">
+                               <input type="text" value="{{config('settings.title1')}}" name="title1" class="form-control"
+                                      id="whatsapp"
+                                      placeholder="النص الاعلى">
+                               <label for="seo_title">النص الاعلى</label>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="col-md-6">
+                       <div class="d-flex flex-column me-n7 pe-7">
+                           <div class="form-floating mb-7">
+                               <input type="text" value="{{config('settings.title2')}}" name="title2" class="form-control"
+                                      id="whatsapp"
+                                      placeholder="النص الوسط">
+                               <label for="seo_title">النص الوسط</label>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="col-md-6">
+                       <div class="d-flex flex-column me-n7 pe-7">
+                           <div class="form-floating mb-7">
+                               <input type="text" value="{{config('settings.footer_text')}}" name="footer_text" class="form-control"
+                                      id="whatsapp"
+                                      placeholder="نص الفوتر">
+                               <label for="seo_title">نص الفوتر</label>
+                           </div>
+                       </div>
+                   </div>
 
                </div>
                 <div class="text-center pt-15">

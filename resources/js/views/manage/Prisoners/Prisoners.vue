@@ -44,7 +44,7 @@
                             <th>#</th>
                             <th>الاسم</th>
                             <th>السجن</th>
-                            <th class="text-center">عمليات</th>
+                            <th class="text-center" v-if="can_edit || can_delete">العمليات</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -53,13 +53,14 @@
 
                             <td>{{ prisoner.name }}</td>
                             <td>{{ prisoner.prison }}</td>
+
                             <td class="text-center">
-                                <a href="javascript:;" @click="editPrisoner(prisoner)"
+                                <a v-if="can_edit"  href="javascript:;" @click="editPrisoner(prisoner)"
                                    class="text-primary me-2">
                                     <i class="las la-pencil-alt text-primary fs-2x"></i>
                                 </a>
 
-                                <a href="javascript:;" @click="deletePrisoner(prisoner)" class="text-danger ">
+                                <a v-if="can_delete"  href="javascript:;" @click="deletePrisoner(prisoner)" class="text-danger ">
                                     <i class="las la-trash text-danger fs-2x"></i>
                                 </a>
                             </td>
@@ -163,6 +164,7 @@ import NewPrisoner from "./NewPrisoner.vue";
 
 export default {
     name: "prisoners",
+    props: ['can_edit', 'can_delete'],
     components: {NewPrisoner},
     data() {
         return {

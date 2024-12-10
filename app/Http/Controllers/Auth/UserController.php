@@ -58,7 +58,7 @@ class UserController extends Controller
         if (request()->get('all')){
             return User::NotIsAdmin()->orderBy('id', 'DESC')->get();
         }
-        return User::filter()->with('roles')->where('id', '!=', 1)->orderBy('id', 'DESC')->paginate(20);
+        return User::filter()->with('roles')->orderBy('id', 'DESC')->paginate(20);
     }
 
     /**
@@ -72,7 +72,6 @@ class UserController extends Controller
             'email' => $request->email,
             'phone' => $request->phone,
             'is_admin' => $request->user_type == 'admin' ? 1 : 0,
-            'login_code' => $request->login_code,
             'password' => bcrypt($request->password),
         ]);
         if ($user->isAdmin){
@@ -88,7 +87,7 @@ class UserController extends Controller
      */
     public function update(User $user, UpdateUserRequest $request): User
     {
-        $input = $request->only('name', 'email', 'phone', 'password','login_code');
+        $input = $request->only('name', 'email', 'phone', 'password');
         if ($request->Input('password')) {
             $bcrypt_pass = bcrypt($request->Input('password'));
             $input['password'] = $bcrypt_pass;

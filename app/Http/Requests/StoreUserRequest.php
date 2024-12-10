@@ -28,17 +28,9 @@ class StoreUserRequest extends FormRequest
             'name' => 'required',
             'phone' => 'required|numeric|unique:users',
             'email' => 'required|email|unique:users',
+            'password' => 'required|min:6',
         ];
 
-        if ($type == 'admin') {
-            $inputs += [
-                'password' => 'required|min:6',
-            ];
-        } else {
-            $inputs += [
-                'login_code' => 'required|unique:users',
-            ];
-        }
         return $inputs;
     }
 
@@ -55,7 +47,6 @@ class StoreUserRequest extends FormRequest
             'email' => __('Email'),
             'phone' => __('Phone'),
             'password' => __('Password'),
-            'login_code' => __('Login code'),
         ];
     }
 }

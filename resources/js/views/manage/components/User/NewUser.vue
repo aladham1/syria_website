@@ -1,20 +1,6 @@
 <template>
     <form id="kt_modal_add_user_form" class="form " method="post"  @submit.prevent="onSubmit"
           @keydown="form.errors.clear($event.target.name)">
-        <div class="mb-10 d-flex">
-            <div class="form-check form-check-custom form-check-solid me-10">
-                <label class="form-check form-check-sm form-check-custom form-check-solid me-5">
-                    <input class="form-check-input" type="radio" v-model="form.user_type" value="admin"/>
-                    <span class="form-check-label">اداري</span>
-                </label>
-            </div>
-            <div class="form-check form-check-custom form-check-solid me-10">
-                <label class="form-check form-check-sm form-check-custom form-check-solid me-5">
-                    <input class="form-check-input" type="radio" v-model="form.user_type" value="user"/>
-                    <span class="form-check-label">مسؤول مرفق</span>
-                </label>
-            </div>
-        </div>
         <div class="d-flex flex-column me-n7 pe-7">
             <div class="form-floating mb-7">
                 <input type="text" v-model="form.name" name="name" class="form-control" id="name"
@@ -41,7 +27,7 @@
                       class="fv-plugins-message-container invalid-feedback"
                       v-text="form.errors.get('phone')"></span>
             </div>
-            <div class="fv-row" v-if="form.user_type == 'admin'">
+            <div class="fv-row">
                 <label class="fs-5 fw-bolder form-label mb-3">الصلاحيات</label>
                 <div class="row">
                     <div class="col-3 mb-3" v-for="role in roles">
@@ -56,16 +42,7 @@
                       class="fv-plugins-message-container invalid-feedback"
                       v-text="form.errors.get('roles')"></span>
             </div>
-            <div class="form-floating mb-7 mt-5"  v-if="form.user_type == 'user'">
-                <input type="text" v-model="form.login_code" name="login_code" class="form-control"
-                       id="login_code"
-                       placeholder="رمز الدخول"/>
-                <label for="login_code">رمز الدخول</label>
-                <span v-if="form.errors.has('login_code')"
-                      class="fv-plugins-message-container invalid-feedback"
-                      v-text="form.errors.get('login_code')"></span>
-            </div>
-            <div class="form-floating mb-7 mt-5"  v-if="form.user_type == 'admin'">
+            <div class="form-floating mb-7 mt-5">
                 <input type="password" v-model="form.password" name="password" class="form-control"
                        id="password"
                        placeholder="كلمة المرور"/>
@@ -76,7 +53,7 @@
             </div>
         </div>
         <div class="text-center pt-15">
-            <button type="submit" :disabled="form.errors.any()" class="btn btn-primary">
+            <button type="submit" class="btn btn-primary">
                 <span class="indicator-label">إضافة</span>
                 <span class="" v-if="postProgress">انتظر ...
 									<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
@@ -95,7 +72,6 @@ export default {
         return {
             form: new Form({
                 email: '',
-                user_type: this.type == 1 ? 'user' : 'admin',
                 name: '',
                 phone: '',
                 password: '',
