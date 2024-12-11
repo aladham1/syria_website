@@ -36,7 +36,7 @@
                 </div>
                 <p id="noResultsMessage" class="no-results" style="display:none;">لا توجد نتائج لهذا الاسم.</p>
                 <div class="row justify-content-center">
-                    <h5 class="data-style">اخر تحديث لقاعدة البيانات: {{$lastUpdated->created_at->format('d/m/Y H:i:s')}}</h5>
+                    <h5 class="data-style">اخر تحديث لقاعدة البيانات: {{$lastUpdated->created_at->setTimezone('Asia/Riyadh')->format('d/m/Y H:i:s')}}</h5>
                     <h6 class="data-style">عدد السجلات: {{$dataCount}}</h6>
                 </div>
                 <div class="text-center mb-4">
