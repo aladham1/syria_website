@@ -20,6 +20,7 @@ use Psr\Container\NotFoundExceptionInterface;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -66,7 +67,7 @@ class User extends Authenticatable
      */
     public function roles(): BelongsToMany
     {
-        return $this->belongsToMany(Role::class, 'roles_users','user_id', 'role_id');
+        return $this->belongsToMany(Role::class, 'roles_users', 'user_id', 'role_id');
     }
 
 
@@ -94,7 +95,7 @@ class User extends Authenticatable
      */
     public function hasAbility($ability): bool
     {
-        if ($this->id == 1){
+        if ($this->id == 1) {
             return true;
         }
         foreach ($this->roles as $role) {
@@ -117,16 +118,12 @@ class User extends Authenticatable
             $q->where('name', 'LIKE', '%' . \request()->get('query') . '%')
                 ->orWhere('email', 'LIKE', '%' . \request()->get('query') . '%')
                 ->orWhere('phone', 'LIKE', '%' . \request()->get('query') . '%');
-        })->when(\request()->get('type') == 1, function ($q) {
-            $q->NotIsAdmin();
-        })->when(!request()->get('type'), function ($q) {
-            $q->isAdmin();
         });
     }
 
     public function facility()
     {
-        return $this->hasOne(FacilityUser::class,'user_id');
+        return $this->hasOne(FacilityUser::class, 'user_id');
     }
 
 }

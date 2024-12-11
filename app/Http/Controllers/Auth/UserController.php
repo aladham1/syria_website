@@ -33,6 +33,7 @@ class UserController extends Controller
         $this->authorizeResource(User::class);
 
     }
+
     /**
      * @return Application|Factory|View
      */
@@ -53,12 +54,11 @@ class UserController extends Controller
         $this->extracted($user, $request);
         return $user;
     }
+
     public function getUsers()
     {
-        if (request()->get('all')){
-            return User::NotIsAdmin()->orderBy('id', 'DESC')->get();
-        }
-        return User::filter()->with('roles')->orderBy('id', 'DESC')->paginate(20);
+//            return User::NotIsAdmin()->orderBy('id', 'DESC')->get();
+        return User::whereNot('id', 1)->filter()->with('roles')->orderBy('id', 'DESC')->paginate(20);
     }
 
     /**
@@ -71,12 +71,9 @@ class UserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
-            'is_admin' => $request->user_type == 'admin' ? 1 : 0,
             'password' => bcrypt($request->password),
         ]);
-        if ($user->isAdmin){
-            $user->roles()->sync($request->roles);
-        }
+        $user->roles()->sync($request->roles);
         return $user?->load('roles');
     }
 
@@ -121,7 +118,7 @@ class UserController extends Controller
             'email' => "required|max:190|unique:users,email,$user->id,id",
             'phone' => "required|max:190|unique:users,phone,$user->id,id",
         ]);
-        $input = $request->only('name', 'email', 'phone', 'password','js_judge');
+        $input = $request->only('name', 'email', 'phone', 'password', 'js_judge');
         if ($request->Input('password')) {
             $bcrypt_pass = bcrypt($request->Input('password'));
             $input['password'] = $bcrypt_pass;

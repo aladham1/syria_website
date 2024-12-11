@@ -23,22 +23,12 @@ class UpdateUserRequest extends FormRequest
      */
     public function rules(): array
     {
-        $type = $this->user_type;
-        $inputs = [
+        return [
             'name' => 'required',
             'phone' => "required|numeric|unique:users,phone,{$this->id},id",
             'email' => "required|email|unique:users,email,{$this->id},id",
+            'password' => 'required|min:6',
         ];
-        if ($type == 'admin') {
-            $inputs += [
-                'password' => 'required|min:6',
-            ];
-        } else {
-            $inputs += [
-                'login_code' => "required|unique:users,login_code,{$this->id},id",
-            ];
-        }
-        return $inputs;
     }
 
 
