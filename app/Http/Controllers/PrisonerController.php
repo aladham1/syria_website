@@ -37,7 +37,7 @@ class PrisonerController extends Controller
      */
     public function getPrisoners(): LengthAwarePaginator
     {
-        return Prisoner::filter()->orderBy('id', 'DESC')->paginate(20);
+        return Prisoner::with('createdBy')->filter()->orderBy('id', 'DESC')->paginate(20);
     }
 
 

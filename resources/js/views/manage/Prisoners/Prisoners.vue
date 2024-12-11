@@ -44,6 +44,7 @@
                             <th>#</th>
                             <th>الاسم</th>
                             <th>ملاحظات</th>
+                            <th>اضيف بواسطة</th>
                             <th class="text-center" v-if="can_edit || can_delete">العمليات</th>
                         </tr>
                         </thead>
@@ -53,6 +54,7 @@
 
                             <td>{{ prisoner.name }}</td>
                             <td>{{ prisoner.prison }}</td>
+                            <td>{{ prisoner.created_by ? prisoner.created_by.name : '' }}</td>
 
                             <td class="text-center">
                                 <a v-if="can_edit"  href="javascript:;" @click="editPrisoner(prisoner)"
