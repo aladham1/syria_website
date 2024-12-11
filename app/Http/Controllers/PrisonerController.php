@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Prisoner;
 use App\Http\Requests\StorePrisonerRequest;
 use App\Http\Requests\UpdatePrisonerRequest;
+use App\Models\User;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -15,6 +16,12 @@ use Psr\Container\NotFoundExceptionInterface;
 
 class PrisonerController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->authorizeResource(Prisoner::class);
+
+    }
     /**
      * Display a listing of the resource.
      */
