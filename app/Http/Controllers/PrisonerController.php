@@ -9,6 +9,7 @@ use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Auth;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 
@@ -38,7 +39,9 @@ class PrisonerController extends Controller
      */
     public function store(StorePrisonerRequest $request)
     {
-        return Prisoner::create($request->all());
+        $data = $request->all();
+        $data ['created_by'] = Auth::id();
+        return Prisoner::create($data);
 
     }
 

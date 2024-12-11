@@ -14,7 +14,11 @@ class Prisoner extends Model
     /**
      * @var string[]
      */
-    protected $fillable = ['name', 'prison'];
+    protected $fillable = ['name', 'prison','created_by'];
+
+    public function createdBy(){
+        return $this->belongsTo(User::class, 'created_by');
+    }
 
     /**
      * @param $query
