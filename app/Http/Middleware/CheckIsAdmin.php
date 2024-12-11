@@ -18,9 +18,6 @@ class CheckIsAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!auth()->user()->is_admin){
-            abort(401);
-        }
         return $next($request);
     }
 }
