@@ -20,8 +20,8 @@ class PrisonerController extends Controller
     public function __construct()
     {
         $this->authorizeResource(Prisoner::class);
-
     }
+
     /**
      * Display a listing of the resource.
      */

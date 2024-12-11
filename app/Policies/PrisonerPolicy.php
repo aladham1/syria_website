@@ -13,7 +13,7 @@ class PrisonerPolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        return $user->hasAbility('prisoners.view');
     }
 
     /**
@@ -21,7 +21,8 @@ class PrisonerPolicy
      */
     public function view(User $user, Prisoner $prisoner): bool
     {
-        //
+        return $user->hasAbility('prisoners.view');
+
     }
 
     /**
@@ -29,7 +30,8 @@ class PrisonerPolicy
      */
     public function create(User $user): bool
     {
-        //
+        return $user->hasAbility('prisoners.create');
+
     }
 
     /**
@@ -37,7 +39,8 @@ class PrisonerPolicy
      */
     public function update(User $user, Prisoner $prisoner): bool
     {
-        //
+        return $user->hasAbility('prisoners.update');
+
     }
 
     /**
@@ -45,22 +48,9 @@ class PrisonerPolicy
      */
     public function delete(User $user, Prisoner $prisoner): bool
     {
-        //
+        return $user->hasAbility('prisoners.delete');
+
     }
 
-    /**
-     * Determine whether the user can restore the model.
-     */
-    public function restore(User $user, Prisoner $prisoner): bool
-    {
-        //
-    }
-
-    /**
-     * Determine whether the user can permanently delete the model.
-     */
-    public function forceDelete(User $user, Prisoner $prisoner): bool
-    {
-        //
-    }
+   
 }
