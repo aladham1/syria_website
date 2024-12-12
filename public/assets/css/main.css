@@ -103,3 +103,9 @@ h3.home-d{
     padding-top: 7px;
     font-size: 50px;
 }
+.page-item .page-link{
+    height: 22px;
+    min-width: 22px;
+    font-size: 10px;
+    padding: 7px;
+}

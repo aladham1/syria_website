@@ -50,7 +50,7 @@
                         </thead>
                         <tbody>
                         <tr v-for="(prisoner, index) in prisoners.data">
-                            <td>{{ (current_page * 20) - 20 + index + 1 }}</td>
+                            <td>{{ (current_page * 35) - 35 + index + 1 }}</td>
 
                             <td>{{ prisoner.name }}</td>
                             <td>{{ prisoner.prison }}</td>
